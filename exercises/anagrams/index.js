@@ -9,22 +9,10 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    const rawA = stringA.replace(/[^\w]/g, "").toLowerCase();
-    const rawB = stringB.replace(/[^\w]/g, "").toLowerCase();
+    const rawA = stringA.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
+    const rawB = stringB.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
 
-    if (rawA.length !== rawB.length) {
-        return false;
-    }
-
-    for (let letter of rawA) {
-        const reg = new RegExp(letter, 'g');
-
-        if (rawA.match(reg).length !== rawB.match(reg).length) {
-            return false;
-        }
-
-        return true;
-    }
+    return rawA === rawB;
 }
 
 module.exports = anagrams;
@@ -57,4 +45,23 @@ module.exports = anagrams;
 //     }
 //
 //     return true;
+// }
+
+// function anagrams(stringA, stringB) {
+//     const rawA = stringA.replace(/[^\w]/g, "").toLowerCase();
+//     const rawB = stringB.replace(/[^\w]/g, "").toLowerCase();
+//
+//     if (rawA.length !== rawB.length) {
+//         return false;
+//     }
+//
+//     for (let letter of rawA) {
+//         const reg = new RegExp(letter, 'g');
+//
+//         if (rawA.match(reg).length !== rawB.match(reg).length) {
+//             return false;
+//         }
+//
+//         return true;
+//     }
 // }
