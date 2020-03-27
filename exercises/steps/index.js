@@ -19,15 +19,25 @@
 
 function steps(n) {
     for (let i = 0; i < n; i++) {
-        let res = '';
-        for (let j = 0; j <= i ; j++) {
-            res += '#';
-         }
-        for (let j = 0; j < n-1-i; j++) {
-            res += ' ';
+        let row = '';
+        for (let j = 0; j < n; j++) {
+            row += (j <= i) ? '#' : ' ' ;
         }
-        console.log(res)
+        console.log(row);
     }
 }
 
 module.exports = steps;
+
+// function steps(n) {
+//     for (let i = 0; i < n; i++) {
+//         let res = '';
+//         for (let j = 0; j <= i ; j++) {
+//             res += '#';
+//          }
+//         for (let j = 0; j < n-1-i; j++) {
+//             res += ' ';
+//         }
+//         console.log(res)
+//     }
+// }
