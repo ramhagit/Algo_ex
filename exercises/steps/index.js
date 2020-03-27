@@ -17,14 +17,22 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-    for (let i = 0; i < n; i++) {
-        let row = '';
-        for (let j = 0; j < n; j++) {
-            row += (j <= i) ? '#' : ' ' ;
-        }
-        console.log(row);
+function steps(n, row = 0, stair = '') {
+    if (row === n) {
+        return;
     }
+
+    if (stair.length === n) {
+        console.log(stair);
+        return steps(n, row + 1);
+    }
+
+    if (stair.length <= row) {
+        stair += '#';
+    } else {
+        stair += ' ';
+    }
+    steps(n, row, stair);
 }
 
 module.exports = steps;
@@ -40,4 +48,44 @@ module.exports = steps;
 //         }
 //         console.log(res)
 //     }
+// }
+
+// function steps(n) {
+//     for (let i = 0; i < n; i++) {
+//         let row = '';
+//         for (let j = 0; j < n; j++) {
+//             row += (j <= i) ? '#' : ' ' ;
+//         }
+//         console.log(row);
+//     }
+// }
+
+// function steps(n, index = 0) {
+//     if (row === n) {
+//         return;
+//     }
+//
+//     let row = '';
+//
+//      while (row.length < n) {
+//         row += (row.length -1 < index) ? '#' : ' ' ;
+//     }
+//
+//     console.log(row);
+//     steps(n, index + 1);
+// }
+
+// function printRow(index, n) {
+//     if (index === n) {
+//         return;
+//     }
+//
+//     let row = '';
+//
+//     while (row.length < n) {
+//         row += (row.length -1 < index) ? '#' : ' ' ;
+//     }
+//
+//     console.log(row);
+//     printRow(index + 1, n);
 // }
