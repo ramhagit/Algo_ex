@@ -14,20 +14,19 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n, row = 0, stair = '') {
+function pyramid(n, row = 0, level = '') {
     if (row === n) {
         return;
     }
 
-    if (stair.length === (n-1)*2 + 1) {
-        console.log(stair);
+    if (level.length === 2*n - 1) {
+        console.log(level);
         return pyramid(n, row +1);
     }
 
-    const add = (stair.length >= n-1 - row && stair.length <= n-1 + row) ? '#' : ' ' ;
+    const add = (level.length >= n-1 - row && level.length <= n-1 + row) ? '#' : ' ' ;
 
-    stair += add;
-    pyramid(n, row, stair);
+    pyramid(n, row, level + add);
 }
 
 module.exports = pyramid;
