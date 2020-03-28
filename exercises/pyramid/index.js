@@ -14,6 +14,24 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+    const colSize = (n-1)*2 + 1;
+
+    for (let row = 0; row < n; row++) {
+        let stair = '';
+
+        for (let column = 0; column < colSize; column++) {
+
+            if (column >= n - 1 - row && column <= n - 1 + row) {
+                stair += '#';
+            } else {
+                stair += ' ';
+            }
+
+        }
+
+        console.log(stair);
+    }
+}
 
 module.exports = pyramid;
