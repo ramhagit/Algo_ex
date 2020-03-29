@@ -8,8 +8,8 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-
-    return str.match(/a|e|i|o|u/gi) ? str.match(/a|e|i|o|u/gi).length : 0 ;
+    const vowelsArr = str.match(/a|e|i|o|u/gi);
+    return vowelsArr ? vowelsArr.length : 0 ;
 }
 
 module.exports = vowels;
