@@ -13,10 +13,6 @@ function fib(n) {
     let b = 1;
     let index = 1;
 
-    if (n === 0) {
-        return 0;
-    }
-
     while (index < n) {
         a += b;
         index++;
@@ -24,7 +20,6 @@ function fib(n) {
         index++;
     }
 
-    console.log("n: ", n, "index: ", index, "a: ", a, "b: ", b);
     if (index > n) {
         return a < b ? a : b;
     } else {
