@@ -8,14 +8,12 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n, a = 0, b = 1, index = 1) {
-    if (index === n) {
-        return  b;
-    } else if (index > n) {
-        return a;
+function fib(n) {
+    if (n < 2) {
+        return n;
     }
 
-    return fib(n, a + b, a + 2*b, index + 2);
+    return fib(n - 2) + fib(n - 1);
 }
 
 module.exports = fib;
@@ -37,4 +35,14 @@ module.exports = fib;
 //     } else {
 //         return a > b ? a : b;
 //     }
+// }
+
+// function fib(n, a = 0, b = 1, index = 1) {
+//     if (index === n) {
+//         return  b;
+//     } else if (index > n) {
+//         return a;
+//     }
+//
+//     return fib(n, a + b, a + 2*b, index + 2);
 // }
