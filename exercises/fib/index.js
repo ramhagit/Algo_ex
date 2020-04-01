@@ -15,8 +15,7 @@ function fib(n, a = 0, b = 1, index = 1) {
         return a;
     }
 
-    let new_a = a + b;
-    return fib(n, new_a, new_a + b, index + 2);
+    return fib(n, a + b, a + 2*b, index + 2);
 }
 
 module.exports = fib;
