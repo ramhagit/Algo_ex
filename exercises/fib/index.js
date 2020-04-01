@@ -8,23 +8,34 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {
-    let a = 0;
-    let b = 1;
-    let index = 1;
-
-    while (index < n) {
-        a += b;
-        index++;
-        b += a;
-        index++;
+function fib(n, a = 0, b = 1, index = 1) {
+    if (index === n) {
+        return  b;
+    } else if (index > n) {
+        return a;
     }
 
-    if (index > n) {
-        return a < b ? a : b;
-    } else {
-        return a > b ? a : b;
-    }
+    let new_a = a + b;
+    return fib(n, new_a, new_a + b, index + 2);
 }
 
 module.exports = fib;
+
+// function fib(n) {
+//     let a = 0;
+//     let b = 1;
+//     let index = 1;
+//
+//     while (index < n) {
+//         a += b;
+//         index++;
+//         b += a;
+//         index++;
+//     }
+//
+//     if (index > n) {
+//         return a < b ? a : b;
+//     } else {
+//         return a > b ? a : b;
+//     }
+// }
