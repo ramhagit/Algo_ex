@@ -39,7 +39,16 @@ class Queue {
     }
 
     peek() {
-        return this.stackOne.data[0];
+        while (this.stackOne.peek()) {
+            this.stackTwo.push(this.stackOne.pop());
+        }
+
+        const last = this.stackTwo.peek();
+
+        while (this.stackTwo.peek()) {
+            this.stackOne.push(this.stackTwo.pop())
+        }
+        return last;
     }
 }
 
